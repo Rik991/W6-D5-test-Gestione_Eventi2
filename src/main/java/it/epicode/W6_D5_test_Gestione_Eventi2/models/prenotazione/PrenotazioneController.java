@@ -27,9 +27,9 @@ public class PrenotazioneController {
 
     @PostMapping
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<Prenotazione> effettuaPrenotazione(@RequestBody PrenotazioneReuqest prenotazioneReuqest) {
+    public ResponseEntity<Prenotazione> effettuaPrenotazione(@RequestBody PrenotazioneRequest prenotazioneRequest) {
 
-        Prenotazione prenotazione = prenotazioneService.effettuaPrenotazione(prenotazioneReuqest);
+        Prenotazione prenotazione = prenotazioneService.effettuaPrenotazione(prenotazioneRequest);
 
         return new ResponseEntity<>(prenotazione, HttpStatus.CREATED);
     }

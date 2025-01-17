@@ -3,6 +3,8 @@ package it.epicode.W6_D5_test_Gestione_Eventi2.models.prenotazione;
 import it.epicode.W6_D5_test_Gestione_Eventi2.auth.AppUser;
 import it.epicode.W6_D5_test_Gestione_Eventi2.models.evento.Evento;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -22,8 +24,10 @@ public class Prenotazione {
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser user;
 
+    @NotBlank
     private LocalDate dataPrenotazione;
 
+    @NotNull
     private int numeroPosti;
 
 

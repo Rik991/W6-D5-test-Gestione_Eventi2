@@ -2,6 +2,9 @@ package it.epicode.W6_D5_test_Gestione_Eventi2.models.evento;
 
 import it.epicode.W6_D5_test_Gestione_Eventi2.auth.AppUser;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -14,12 +17,16 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @NotBlank
     private String titolo;
 
+    @NotBlank
     private String descrizione;
 
+    @FutureOrPresent
     private LocalDate data;
 
+    @NotBlank
     private String luogo;
 
     @Column(name = "posti_disponibili")
