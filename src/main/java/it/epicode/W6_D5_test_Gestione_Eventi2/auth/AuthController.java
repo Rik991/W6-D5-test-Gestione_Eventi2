@@ -26,6 +26,7 @@ public class AuthController {
 
 
     @PostMapping("/register/organizer")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> registerOrganizer(@RequestBody RegisterRequest registerRequest) {
         appUserService.registerUser(
                 registerRequest.getUsername(),
