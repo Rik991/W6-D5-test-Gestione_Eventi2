@@ -1,6 +1,6 @@
 package it.epicode.W6_D5_test_Gestione_Eventi2.models.evento;
 
-import jakarta.persistence.Column;
+
 import lombok.Data;
 
 import java.time.LocalDate;

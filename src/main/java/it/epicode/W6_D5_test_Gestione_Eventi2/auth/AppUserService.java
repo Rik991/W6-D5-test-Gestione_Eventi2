@@ -67,4 +67,8 @@ public class AppUserService {
 
         return appUser;
     }
+
+    public void deleteUser(Long id) {
+        appUserRepository.deleteById(id);
+    }
 }
