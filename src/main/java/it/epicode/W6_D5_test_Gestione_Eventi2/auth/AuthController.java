@@ -2,10 +2,8 @@ package it.epicode.W6_D5_test_Gestione_Eventi2.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
@@ -45,4 +43,13 @@ public class AuthController {
         );
         return ResponseEntity.ok(new AuthResponse(token));
     }
+
+    @DeleteMapping("/delete/user/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        appUserService.deleteUser(id);
+        return ResponseEntity.ok("Utente eliminato con successo");
+    }
+
+
+
 }
