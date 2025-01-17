@@ -3,14 +3,11 @@ package it.epicode.W6_D5_test_Gestione_Eventi2.models.evento;
 
 import it.epicode.W6_D5_test_Gestione_Eventi2.auth.AppUser;
 import it.epicode.W6_D5_test_Gestione_Eventi2.auth.AppUserRepository;
-import it.epicode.W6_D5_test_Gestione_Eventi2.auth.Role;
 import it.epicode.W6_D5_test_Gestione_Eventi2.exceptions.EventoException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
