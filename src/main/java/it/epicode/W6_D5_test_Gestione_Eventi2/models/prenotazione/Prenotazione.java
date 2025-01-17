@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@Table(name = "prenotazioni")
 public class Prenotazione {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,7 +25,7 @@ public class Prenotazione {
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser user;
 
-    @NotBlank
+    @NotNull
     private LocalDate dataPrenotazione;
 
     @NotNull
